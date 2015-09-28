@@ -84,7 +84,6 @@ deriving instance Show UnfoldingSource
 deriving instance Show UnfoldingGuidance
 deriving instance Show Activation
 deriving instance Show CoreRule
--- deriving instance Show IsOrphan
 deriving instance Show StrictSig
 deriving instance Show DmdType
 

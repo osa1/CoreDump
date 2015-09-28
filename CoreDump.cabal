@@ -1,21 +1,26 @@
 name:                CoreDump
 version:             0.1.0.0
--- synopsis:
--- description:
--- license:
+
+synopsis:
+  A GHC plugin for printing GHC's internal Core data structures.
+
+description:         See README file.
+
+license:             BSD3
 license-file:        LICENSE
 author:              Ömer Sinan Ağacan
 maintainer:          omeragacan@gmail.com
--- copyright:
--- category:
+category:            GHC
 build-type:          Simple
--- extra-source-files:
 cabal-version:       >=1.10
+
+source-repository head
+  type:                git
+  location:            git://github.com/osa1/CoreDump.git
 
 library
   exposed-modules:     CoreDump
   other-modules:       CoreDump.Show
-  -- other-extensions:
   build-depends:
     base >= 4.8 && < 4.9,
     ghc  >= 7.10 && < 8,
