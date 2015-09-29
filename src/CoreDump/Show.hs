@@ -148,12 +148,15 @@ instance Show ModuleName where
 instance Show PackageKey where
     show = show . packageKeyString
 
+-- Outputable outputs are not generating valid Haskell syntax, so we use an
+-- extra `show` here.
+
 instance Show Name where
-    show = showOutputable . nameOccName
+    show = show . showOutputable . nameOccName
 
 -- deriving instance Show Name
 instance Show OccName where
-    show = showOutputable
+    show = show . showOutputable
 
 instance Show Coercion where
     show _ = "Coercion"
