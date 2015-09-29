@@ -1,5 +1,5 @@
 name:                CoreDump
-version:             0.1.0.0
+version:             0.1.0.1
 
 synopsis:
   A GHC plugin for printing GHC's internal Core data structures.
