@@ -1,5 +1,5 @@
 name:                CoreDump
-version:             0.1.0.1
+version:             0.1.1.0
 
 synopsis:
   A GHC plugin for printing GHC's internal Core data structures.
@@ -24,7 +24,8 @@ library
   build-depends:
     base >= 4.8 && < 4.9,
     ghc  >= 7.10 && < 8,
-    haskell-src-exts
+    pretty,
+    pretty-show
   hs-source-dirs:      src
   default-language:    Haskell2010
   ghc-options:         -Wall

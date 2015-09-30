@@ -6,8 +6,8 @@ import Data.IORef (writeIORef)
 import Data.List (intersperse)
 
 -- For pretty-printing
-import Language.Haskell.Exts.Parser
-import Language.Haskell.Exts.Pretty
+import Text.Show.Pretty (ppDoc)
+import Text.PrettyPrint
 
 import CoreDump.Show
 
@@ -30,15 +30,6 @@ plugin = defaultPlugin{installCoreToDos = installPlugin}
 
 pluginPass :: ModGuts -> CoreM ModGuts
 pluginPass guts@ModGuts{ mg_binds = binds } = do
-    liftIO $ mapM_ putStrLn $ intersperse "" $ map showPretty binds
+    liftIO $ mapM_ putStrLn $ intersperse "" $
+      map (renderStyle (Style PageMode 100 1.0) . ppDoc) binds
     return guts
-
-showPretty :: Show a => a -> String
-showPretty a =
-    case parseExp s of
-      ParseOk x          -> prettyPrint x
-      -- ParseFailed loc reason ->
-      --   trace ("parse failed: " ++ show (loc, reason)) s
-      ParseFailed{}      -> s
-  where
-    s = show a
