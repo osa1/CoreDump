@@ -16,7 +16,7 @@ cabal-version:       >=1.10
 
 source-repository head
   type:                git
-  location:            git://github.com/osa1/CoreDump.git
+  location:            https://github.com/osa1/CoreDump
 
 library
   exposed-modules:     CoreDump
